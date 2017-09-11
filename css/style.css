@@ -1,0 +1,121 @@
+form {
+	padding: 0px;
+	margin: auto;
+	background-color: white;
+	padding-bottom: 10px;
+}
+div.content {
+	padding: 0px;
+	width: 90%;
+	margin: auto;
+	background-color: white;
+}
+table {
+	border-collapse: collapse;
+	margin: auto;
+	padding: 0;
+}
+th {
+	border: 1px solid silver;
+	font-weight: bold;
+	background: lightgrey;
+}
+td.text {
+	border: 1px solid silver;
+}
+td.digit{
+	border: 1px solid silver;
+	text-align: center;
+}
+
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+.top-menu {
+	width: 90%;
+	margin: auto;
+	position: relative; 
+	background: #fff;
+}
+.menu-main {
+  list-style: none;
+  padding: 0 30px;
+  margin: 0;
+  font-size: 18px;
+  text-align: center;
+  position: relative;
+}
+.menu-main:before {left: 15px;}
+.menu-main:after {right: 15px;}
+.menu-main li {
+  display: inline-block;
+  padding: 5px 0;
+}
+.menu-main a {
+  text-decoration: none;
+  display: inline-block;
+  margin: 2px 5px;
+  padding: 6px 15px;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 16px;
+  color: #777777;
+  border-bottom: 1px solid transparent;
+  transition: .3s linear;
+}
+.menu-main .current, .menu-main a:hover {
+  border-radius: 3px;
+  background: #f3ece1;
+  color: #313131;
+  text-shadow: 0 1px 0 #fff;
+  border-color: #c6c6c6;
+}
+
+/* Стили формы добавления заказа*/
+.field {
+	clear:both;
+	text-align:right;
+}
+label{
+	float:left;
+}
+.main_form {
+	width: 40%;
+	margin: 0 auto;
+}
+input.main_form{
+	width: 50%;
+	margin-bottom: 5px;
+}
+textarea.main_form{
+	width: 100%;
+	height: 120px;
+}
+input.main_form_button{
+	margin-top: 10px;
+	width: 20%;
+}
+
+/* Стили формы детального просмотра*/
+.detail_form {
+	width: 40%;
+/*	margin: left;*/
+}
+input.detail_form{
+	width: 50%;
+	margin-bottom: 5px;
+}
+textarea.detail_form{
+	width: 100%;
+	height: 120px;
+}
+input.detail_form_button{
+	margin-top: 10px;
+	width: 20%;
+}
+
+/* Стили подвала*/
+footer {
+	clear: both;
+}
+
+@media (max-width: 500px) {
+  .menu-main li {display: block;}
+}
