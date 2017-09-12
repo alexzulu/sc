@@ -18,6 +18,12 @@
 	$expenses = $row['expenses'];
 	$cost = $row['cost'];
 ?>
+<div class="content">
+<form class="test_form">
+        <fieldset>
+                <legend>Тест</legend>
+        </fieldset>
+</form>
 <form method="GET" action="inc/send.php">
 <!--	<input type="hidden" name="page" value="detail">-->
 	<div class="detail_form">
@@ -118,5 +124,6 @@
 		<input class="detail_form_button" type="reset" value="Очистить" />
 	</div>
 	</fieldset>
+	</div>
 </form>
-<?php mysqli_close ($db);?>
+</div>

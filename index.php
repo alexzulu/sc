@@ -18,7 +18,7 @@
 		<header></header>
 		<?php include 'content/nav_menu.php'?>
 		<main>
-		<div class="content">
+<!--		<div class="content">-->
 		<?php
 			if(!$page){
 				$page = "main";
@@ -28,7 +28,7 @@
 			}
 			include "content/$page.php";
 		?>
-		</div>
+<!--		</div>-->
 		</main>
 		<footer>
 			<?php include 'content/footer.php'?>

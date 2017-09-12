@@ -54,7 +54,7 @@
 		<?php
 		while ($row = mysqli_fetch_assoc($device_list))
 		{
-			echo'<option value="'.$row["type"].'"></option>';
+			echo'<option value="'.$row["category"].'"></option>';
 		}
 		?>
 		</datalist>

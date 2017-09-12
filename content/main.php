@@ -1,9 +1,9 @@
-<table width="100%">
+<table class="order_list">
 	<tr>
 		<th>№ заказа</th>
 		<th>Статус</th>
 		<th>Дата приёма</th>
-		<th>Дата выдачи</th>
+		<th class="date_out">Дата выдачи</th>
 		<th>Мастер</th>
 		<th>Устройство</th>
 		<th>Производитель</th>
@@ -22,9 +22,9 @@
 			<td class="digit">'.$row['status'].'</td>
 			<td class="text">'.$row['date_in'].'</td>';
 			if($row['date_out'] != "0000-00-00"){
-				echo'<td class="text">'.$row['date_out'].'</td>';
+				echo'<td class="date_out">'.$row['date_out'].'</td>';
 			} else {
-				echo'<td class="text"></td>';
+				echo'<td class="date_out"></td>';
 			};
 			echo'
 			<td class="text">'.$row['remonter'].'</td>
