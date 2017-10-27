@@ -1,34 +1,56 @@
-<!doctype html>
 <?php
-	include 'inc/config.php';
+    session_start();
+    if(!$_SESSION[login]){
+        $autorized = 0;
+    } else {
+        $autorized = 1;
+	}
+    include 'inc/config.php';
 	if($_GET['page']){
 		$page = $_GET['page'];
 	}
+    include 'inc/db.php';
+	if (!empty($_SESSION['login']) and !empty($_SESSION['password'])){
+        //если существет логин и пароль в сессиях, то проверяем их и извлекаем аватар
+        $login = $_SESSION['login'];
+        $password = $_SESSION['password'];
+        $result = mysqli_query($db, "SELECT id,avatar FROM users WHERE login='$login' AND password='$password'"); 
+        $myrow = mysqli_fetch_array($result);
+        //извлекаем нужные данные о пользователе
+    }
 ?>
-<html>
+<!doctype html>
+<html class="no-js" lang="en">
 	<head>
-		<title>Service Center</title>
+		<title><?php echo $site_title; ?></title>
 		<meta charset="UTF-8">
 		<link href="css/style.css" rel="stylesheet">
+		<link href="css/left-nav-style.css" rel="stylesheet">
+		<link href="css/form.css" rel="stylesheet">
 		<style>
 		</style>
 	</head>
-	<?php include 'inc/db.php'?>
 	<body>
-		<header></header>
+        <header>
+		<div class="top">
+		<?php
+			if(!$_SESSION[login]){
+                echo"Вы вошли на сайт, как Гость.<br><a href='?page=login'>Войдите</a> или <a href='?page=login'>зарегистрируйтесь</a><br>";
+            } else {
+                echo"Вы вошли на сайт, как $_SESSION[login].<br><a href='content/exit.php'>Выход</a><br>";
+            }
+		?>
+		</div>
+		</header>
+		<input type="checkbox" id="nav-toggle" hidden>
 		<?php include 'content/nav_menu.php'?>
-		<main>
-<!--		<div class="content">-->
+		<main role="main">
 		<?php
 			if(!$page){
 				$page = "main";
 			}
-			if($page == "main"){
-//				include 'content/find.php';
-			}
 			include "content/$page.php";
 		?>
-<!--		</div>-->
 		</main>
 		<footer>
 			<?php include 'content/footer.php'?>

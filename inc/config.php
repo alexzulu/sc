@@ -1,10 +1,11 @@
 <?php
+$site_title = "Сервис-центр \"Балалайка\"";
 // Хост (обычно localhost)
 $db_host = "localhost";
 // Имя базы данных
 $db_name = "service_centre";
 // Логин для подключения к базе данных
-$db_user = "db_user";
+$db_user = "root";
 // Пароль для подключения к базе данных
-$db_pass = "db_user_pass";
+$db_pass = "-ua6Hdw_";
 ?>

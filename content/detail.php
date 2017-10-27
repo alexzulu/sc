@@ -19,12 +19,12 @@
 	$cost = $row['cost'];
 ?>
 <div class="content">
-<form class="test_form">
-        <fieldset>
-                <legend>Тест</legend>
-        </fieldset>
-</form>
 <form method="GET" action="inc/send.php">
+	<div class="test_form">
+     <fieldset>
+       <legend>Тест</legend>
+		</fieldset>
+	</div>
 <!--	<input type="hidden" name="page" value="detail">-->
 	<div class="detail_form">
 	<fieldset>
@@ -119,11 +119,13 @@
 		<textarea name="description" class="detail_form"><?php echo $notes;?></textarea>
 	</div>
 	</fieldset>
-	<div align="center">
-		<input class="detail_form_button" type="submit" value="Сохранить" />
-		<input class="detail_form_button" type="reset" value="Очистить" />
-	</div>
 	</fieldset>
+	</div>
+	<div align="center">
+		<fieldset>
+			<input class="detail_form_button" type="submit" value="Сохранить" />
+			<input class="detail_form_button" type="reset" value="Очистить" />
+		</fieldset>
 	</div>
 </form>
 </div>
