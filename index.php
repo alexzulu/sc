@@ -31,18 +31,7 @@
 		</style>
 	</head>
 	<body>
-        <header>
-		<div class="top">
-		<?php
-			if(!$_SESSION[login]){
-                echo"Вы вошли на сайт, как Гость.<br><a href='?page=login'>Войдите</a> или <a href='?page=login'>зарегистрируйтесь</a><br>";
-            } else {
-                echo"Вы вошли на сайт, как $_SESSION[login].<br><a href='content/exit.php'>Выход</a><br>";
-            }
-		?>
-		</div>
-		</header>
-		<input type="checkbox" id="nav-toggle" hidden>
+        <?php include 'content/header.php'?>
 		<?php include 'content/nav_menu.php'?>
 		<main role="main">
 		<?php

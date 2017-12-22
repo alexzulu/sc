@@ -23,7 +23,7 @@
   text-align: center;
   padding: 30px;
 }
-form {
+.data {
   background: white;
   float: left;
   width: calc(100% - 240px);
@@ -46,8 +46,8 @@ h1 {
   position: relative;
   margin-top: 50px;
 }
-/*
-h1:after {
+
+/*h1:after {
   content: "\2297";
   font-size: 40px;
   font-family: FontAwesome;
@@ -56,15 +56,24 @@ h1:after {
   left: 50%;
   transform: translateX(-50%);
 }
-*/
+
 label, span {
   display: block;
   font-size: 14px;
   margin-bottom: 8px;
+  width: 100%;
+}*/
+
+.form-label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 8px;
+  width: 100%;
 }
+
 input[type="text"], input[type="password"] {
   width: 100%;
-  padding: 10px 15px;
+  padding: 10px;
   border-width: 0;
   background: #e6e6e6;
   outline: none;
@@ -143,8 +152,8 @@ button {
   padding: 10px 0;
   border-width: 0;
   display: block;
-  width: 200px;
-  margin: 25px auto 0;
+  width: 100%;
+/*  margin: 25px auto 0;*/
   background: #60e6c5;
   color: white;
   font-size: 14px;

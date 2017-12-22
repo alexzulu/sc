@@ -18,10 +18,11 @@
 	$expenses = $row['expenses'];
 	$cost = $row['cost'];
 ?>
-<div class="content">
+
+<article>
 <form method="GET" action="inc/send.php">
 	<div class="test_form">
-     <fieldset>
+    <fieldset>
        <legend>Тест</legend>
 		</fieldset>
 	</div>
@@ -128,4 +129,4 @@
 		</fieldset>
 	</div>
 </form>
-</div>
+</article>

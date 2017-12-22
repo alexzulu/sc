@@ -33,7 +33,7 @@ if (empty($ip) || $ip=='unknown') { $ip=getenv("REMOTE_ADDR"); }
 
 mysqli_query($db, "DELETE FROM mistake WHERE UNIX_TIMESTAMP() - UNIX_TIMESTAMP(date) > 900");//удал€ем ip-адреса ошибавшихс€ при входе пользователей через 15 минут.
 
-$result = mysqli_query("SELECT col FROM mistake WHERE ip='$ip'");// извлекаем из базы колличество неудачных попыток входа за последние 15 минут у пользовател€ с данным ip
+$result = mysqli_query($db,"SELECT col FROM mistake WHERE ip='$ip'");// извлекаем из базы колличество неудачных попыток входа за последние 15 минут у пользовател€ с данным ip
 $myrow = mysqli_fetch_array($result);
 
 if ($myrow['col'] > 2) {
@@ -58,7 +58,7 @@ if (empty($myrow['id'])){//если пользовател€ с введенным логином и паролем не су
         $col = $myrow52[0] + 1;//≈сли есть,то приплюсовываем количесво 
         mysqli_query ("UPDATE mistake SET col=$col,date=NOW() WHERE ip='$ip'");
     } else {//если за последние 15 минут ошибок не было, то вставл€ем новую запись в таблицу "mistake"
-        mysqli_query("INSERT INTO mistake (ip,date,col) VALUES ('$ip',NOW(),'1')");
+        mysqli_query($db,"INSERT INTO mistake (ip,date,col) VALUES ('$ip',NOW(),'1')");
     }
     exit ("»звините, введЄнный вами логин или пароль неверный.");
 } else {
