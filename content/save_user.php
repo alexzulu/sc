@@ -136,7 +136,20 @@ $password = $password."b3p6f";
 
 // подключаемся к базе
 include '../inc/config.php';
-include '../inc/db.php';// файл bd.php должен быть в той же папке, что и все остальные, если это не так, то просто измените путь 
+include '../inc/db.php';// файл bd.php должен быть в той же папке, что и все остальные, если это не так, то просто измените путь
+echo "
+<!doctype html>
+<html class=\"no-js\" lang=\"ru\">
+	<head>
+		<title>Сервис-центр \"Балалайка\"</title>
+		<meta charset=\"UTF-8\">
+		<link href=\"css/style.css\" rel=\"stylesheet\">
+		<link href=\"css/left-nav-style.css\" rel=\"stylesheet\">
+		<link href=\"css/form.css\" rel=\"stylesheet\">
+		<style>
+		</style>
+	</head>
+	<body>";
 
 // проверка на существование пользователя с таким же логином
 $result = mysqli_query($db, "SELECT id FROM users WHERE login='$login'");
@@ -150,10 +163,13 @@ $result2 = mysqli_query($db, "INSERT INTO users (login,password,avatar) VALUES('
 // Проверяем, есть ли ошибки
 if ($result2=='TRUE')
 {
-echo "Вы успешно зарегистрированы! Теперь вы можете зайти на сайт. <a href='index.php'>Главная страница</a>";
+echo "Вы успешно зарегистрированы! Теперь вы можете зайти на сайт. <a href='../index.php'>Главная страница</a>";
 }
 
 else {
 echo "Ошибка! Вы не зарегистрированы.";
      }
+    echo "
+    </body>
+    </html>";
 ?>

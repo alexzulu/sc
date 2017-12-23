@@ -2,7 +2,7 @@
 	$max_id =(int)$max_id;
 	$max_id = $max_id + 1;
 ?>
-<form method="GET" action="inc/send.php">
+<form method="POST" action="inc/send.php">
 	<input type="hidden" name="page" value="add_order">
 	<div class="main_form">
 	<fieldset>
@@ -11,11 +11,11 @@
 	<legend>Заказ</legend>
 	<div class="field">
 		<label for="order_number">Заказ №</label>
-		<input disabled id="order_number" name="order_number" value="<?php echo $max_id; ?>" class="main_form" />
+		<input id="order_number" name="order_number" value="<?php echo $max_id; ?>" class="main_form" />
 	</div>
 	<div class="field">
 		<label for="date_in">Дата приёмки</label>
-		<input disabled type="text" list="date_in" name="date_in" value="<?php echo date('Y-m-d') ?>" class="main_form" />
+		<input type="text" list="date_in" name="date_in" value="<?php echo date('Y-m-d') ?>" class="main_form" />
 	</div>
 	<div class="field">
 		<label for="remonter">Мастер</label>
@@ -31,7 +31,7 @@
 	</div>
 	<div class="field">
 		<label for="status">Статус</label>
-		<input disabled type="text" name="status" class="main_form" value="Принят" />
+		<input type="text" name="status" class="main_form" value="Принят" />
 <!--
 		<input type="text" list="status" name="status" class="main_form" />
 		<datalist id="status">
